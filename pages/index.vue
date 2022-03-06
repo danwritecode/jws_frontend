@@ -1,6 +1,6 @@
 <template>
   <div class="bg-black">
-    <div class="min-h-[95.6vh;] xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:grid lg:grid-cols-2 md:gap-16 xl:gap-24 2xl:gap-40 items-center py-20 sm:py-32 lg:py-0">
+    <div class="min-h-[100vh] xl:max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-12 lg:grid lg:grid-cols-2 md:gap-16 xl:gap-24 2xl:gap-40 items-center py-20 sm:py-32 lg:py-0 -mt-11">
       <div class="lg:hidden h-20 w-20 bg-black border-2 border-zinc-100 rounded-full flex items-center justify-center">
         <img src="~/assets/img/jws_shortened.svg" alt="" class="h-10">
       </div>

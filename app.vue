@@ -32,12 +32,12 @@ html {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #d6dee1;
+  background-color: #3f3f46;
   border-radius: 20px;
   border: 6px solid transparent;
   background-clip: content-box;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #a8bbbf;
+  background-color: #52525b;
 }
 </style>
