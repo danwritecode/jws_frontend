@@ -1,6 +1,6 @@
 <template>
   <div class="bg-black">
-    <div class="min-h-[100vh;] xl:max-w-screen-2xl mx-auto px-4 sm:px-6 grid grid-cols-2 gap-40 items-center">
+    <div class="min-h-[95.6vh;] xl:max-w-screen-2xl mx-auto px-4 sm:px-6 grid grid-cols-2 gap-40 items-center">
       <img src="~/assets/img/jws_shortened.svg" alt="">
       <div>
         <h1 class="text-4xl tracking-tight font-extrabold text-zinc-100 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
@@ -26,7 +26,7 @@
 
 <script setup>
 definePageMeta({
-  layout: false,
+  layout: "landing",
 });
 
 </script>
