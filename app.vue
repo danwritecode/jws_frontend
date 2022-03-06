@@ -12,8 +12,20 @@ html {
   overflow-y: overlay;
 }
 
+.layout-enter-from {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.layout-enter-active,
+.layout-leave-active {
+  transition: all 0.2s;
+}
+.layout-enter,
+.layout-leave-to {
+  opacity: 0;
+}
 
-.page-enter-from{
+.page-enter-from {
   opacity: 0;
   transform: translateY(-10px);
 }
@@ -25,6 +37,8 @@ html {
 .page-leave-to {
   opacity: 0;
 }
+
+
 ::-webkit-scrollbar {
   width: 20px;
 }
