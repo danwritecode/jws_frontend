@@ -9,14 +9,18 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'hero-pattern': "url('~/assets/img/testing_background.svg')",
-        'webb-pattern': "url('~/assets/img/webb.png')",
-        'dot-pattern': "url('~/assets/img/dot-grid.png')"
+        'natural-black': "url('~/assets/img/ep_naturalblack.png')",
+        'noisy-net': "url('~/assets/img/noisy_net.png')",
+        'blackmamba': "url('~/assets/img/blackmamba.png')"
+      },
+      gridTemplateRows: {
+        '[auto,auto,1fr]': 'auto auto 1fr',
       }
-    },
+    }
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/forms')
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography')
   ],
 }
