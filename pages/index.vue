@@ -24,11 +24,11 @@
       </div>
     </div>
 
-    <div v-if="shopClicked" class="xl:max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-12 py-24">
+    <div class="xl:max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-12 py-24">
       <ShopProducts id="shop" />
     </div>
 
-    <GlobalFooter v-if="shopClicked" />
+    <GlobalFooter />
   </div>
 </template>
 
