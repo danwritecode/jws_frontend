@@ -39,36 +39,20 @@
 
       <div>
         <!-- Images -->
-        <div v-if="!loading && product.images.edges.length >= 4" class="mt-6 lg:grid lg:grid-cols-3 lg:gap-x-8">
-          <div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
-            <img v-if="!selectedProductImgUrl" :src="product.images.edges[0].node.url" alt="Two each of gray, white, and black shirts laying flat." class="w-full h-full object-center object-cover">
-            <img v-else :src="selectedProductImgUrl" alt="Two each of gray, white, and black shirts laying flat." class="w-full h-full object-center object-cover">
+        <div v-if="!loading && product.images.edges.length >= 2" class="mt-6 lg:grid lg:grid-cols-2 lg:gap-x-8">
+          <div class="aspect-w-4 aspect-h-4 sm:rounded-lg sm:overflow-hidden lg:aspect-w-1 lg:aspect-h-1">
+            <img v-if="!selectedProductImgUrl" :src="product.images.edges[0].node.url" class="w-full h-full object-center object-cover">
+            <img v-else :src="selectedProductImgUrl" class="w-full h-full object-center object-cover">
           </div>
-          <div class="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
-            <div class="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
-              <img :src="product.images.edges[1].node.url" alt="Model wearing plain black basic tee." class="w-full h-full object-center object-cover">
-            </div>
-            <div class="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
-              <img :src="product.images.edges[2].node.url" alt="Model wearing plain gray basic tee." class="w-full h-full object-center object-cover">
-            </div>
-          </div>
-          <div class="hidden aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block">
-            <img :src="product.images.edges[3].node.url" alt="Model wearing plain white basic tee." class="w-full h-full object-center object-cover">
+          <div class="hidden aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block lg:aspect-w-1 lg:aspect-h-1">
+            <img :src="product.images.edges[1].node.url" alt="Model wearing plain white basic tee." class="w-full h-full object-center object-cover">
           </div>
         </div>
-        <div v-else class="mt-6 lg:grid lg:grid-cols-3 lg:gap-x-8 animate-pulse">
-          <div class="hidden aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block">
+        <div v-else class="mt-6 lg:grid lg:grid-cols-2 lg:gap-x-8 animate-pulse">
+          <div class="hidden aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block lg:aspect-w-1 lg:aspect-h-1">
             <div class="w-full h-full bg-zinc-200"></div>
           </div>
-          <div class="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
-            <div class="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
-              <div class="w-full h-full bg-zinc-200"></div>
-            </div>
-            <div class="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
-              <div class="w-full h-full bg-zinc-200"></div>
-            </div>
-          </div>
-          <div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
+          <div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-1 lg:aspect-h-1">
             <div class="w-full h-full bg-zinc-200"></div>
           </div>
         </div>
