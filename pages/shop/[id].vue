@@ -14,7 +14,7 @@
     </Html>
     <div class="bg-white">
       <nav class="flex" aria-label="Breadcrumb">
-        <ol role="list" class="flex items-center space-x-4">
+        <ol role="list" class="flex items-center space-x-1 sm:space-x-4">
           <li>
             <div>
               <nuxt-link to="/" class="text-zinc-400 hover:text-zinc-500 transition-hover-300">
@@ -33,17 +33,17 @@
               <svg class="flex-shrink-0 h-5 w-5 text-zinc-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
               </svg>
-              <nuxt-link to="/shop" class="ml-4 text-sm font-medium text-zinc-400 hover:text-zinc-600 transition-hover-300">Shop</nuxt-link>
+              <nuxt-link to="/shop" class="ml-1 sm:ml-4 text-sm font-medium text-zinc-400 hover:text-zinc-600 transition-hover-300">Shop</nuxt-link>
             </div>
           </li>
 
-          <li v-if="!loading"> 
+          <li v-if="!loading" class="truncate w-56 sm:w-full"> 
             <div class="flex items-center">
               <!-- Heroicon name: solid/chevron-right -->
               <svg class="flex-shrink-0 h-5 w-5 text-zinc-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
               </svg>
-              <span class="ml-4 text-sm font-medium text-zinc-400">{{ product.title }}</span>
+              <span class="ml-1 sm:ml-4 text-sm font-medium text-zinc-400">{{ product.title }}</span>
             </div>
           </li>
         </ol>
