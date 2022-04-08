@@ -13,12 +13,12 @@ export default defineNuxtPlugin((nuxtApp) => {
         }, 300)
       }
     } 
-    // else {
-    //   return new Promise((resolve, reject) => {
-    //     setTimeout(() => {
-    //       resolve({ left: 0, top: 0 })
-    //     }, 200)
-    //   })
-    // }
+    else {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve({ left: 0, top: 0 })
+        }, 200)
+      })
+    }
   }
 })
