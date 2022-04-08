@@ -6,7 +6,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
   //   cartIdStore.value = cartIdCookie.value
   // }
 
-  console.log(cartIdCookie.value)
-  console.log(cartIdStore.value)
+  // console.log(cartIdCookie.value)
+  // console.log(cartIdStore.value)
 
 })

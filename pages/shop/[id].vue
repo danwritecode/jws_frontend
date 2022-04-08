@@ -1,5 +1,17 @@
 <template>
   <div>
+    <Html v-if="!loading" lang="en-US">
+      <Head>
+        <Title>JWS - {{product.title}}</Title>
+        <Meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <Meta name="description" :content="product.description" />
+        <Meta name="image" :content="product.images.edges[0].node.url" />
+        <Meta name="twitter:card" content="summary_large_image" />
+        <Meta name="twitter:title" :content="product.title" />
+        <Meta name="twitter:description" :content="product.description" />
+        <Meta name="twitter:image" :content="product.images.edges[0].node.url" />
+      </Head>
+    </Html>
     <div class="bg-white">
       <nav class="flex" aria-label="Breadcrumb">
         <ol role="list" class="flex items-center space-x-4">
@@ -184,26 +196,6 @@ const product = useResult(result, null, data => data.productByHandle)
 const vendor = computed(() => { return product.value.vendor })
 const variants = computed(() => { return product.value.variants.edges })
 
-// #region Meta
-const config = useRuntimeConfig();
-const baseUrl = config.BASE_URL
-
-const meta = useMeta({
-  title: computed(() => `JWS - ${product.title}`),
-  htmlAttrs: {
-    lang: 'en'
-  },
-  meta: [
-    { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' },
-    { hid: 'description', name: 'description', content: computed(() => product.description) },
-    { hid: 'image', name: 'image', content: `${baseUrl}/jws_logo.png` },
-    { name: 'twitter:card', content: "summary_large_image"},
-    { name: 'twitter:title', content: computed(() => `JWS - ${product.title}`)},
-    { name: 'twitter:description', content: computed(() => product.description) },
-    { name: 'twitter:image', content: `${baseUrl}/jws_logo.png`}
-  ]
-})
-// #endregion
 
 // #region Selection
 const selectedSize = ref(null)
