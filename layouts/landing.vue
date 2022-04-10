@@ -15,3 +15,14 @@
     </div>
   </div>
 </template>
+
+<script setup>
+
+if(process.client) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6XE80QRRN0');
+}
+
+</script>
