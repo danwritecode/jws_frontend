@@ -22,6 +22,7 @@ export const GET_PRODUCTS = gql`
           vendor
           handle
           featuredImage {
+            id
             url
           }
           variants(first: 3) {
@@ -307,3 +308,47 @@ query checkoutURL($cartId: ID!) {
     checkoutUrl
   }
 }`
+
+export const GET_FEATURED_PRODUCTS = gql`
+  query collections {
+    collection(handle: "featured") {
+      id
+      title
+      description
+      descriptionHtml
+      products(first: 10, reverse: true, sortKey: CREATED) {
+        edges {
+          cursor
+          node {
+            id
+            title
+            handle
+            description
+            metafield(namespace: "product", key: "featuredproductexpiration") {
+              value
+            }
+            featuredImage {
+              id
+              url
+              altText
+            }
+            variants(first: 3) {
+              edges {
+                cursor
+                node {
+                  id
+                  title
+                  quantityAvailable
+                  priceV2 {
+                    amount
+                    currencyCode
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`

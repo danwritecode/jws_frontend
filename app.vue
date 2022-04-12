@@ -1,5 +1,11 @@
 <template>
   <div>
+    <Html lang="n-US">
+      <Head>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-6XE80QRRN0"></Script>
+      </Head>
+    </Html>
+
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
