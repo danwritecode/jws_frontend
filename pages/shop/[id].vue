@@ -185,7 +185,7 @@
 import _uniq from 'lodash/uniq' 
 import { useQuery, useMutation, useResult } from '@vue/apollo-composable'
 import { GET_PRODUCT_BY_HANDLE, CREATE_CART, ADD_TO_CART } from '@/api/queries'
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
@@ -206,10 +206,50 @@ const selectedProductQuantity = ref(null)
 const selectedProductImgUrl = ref(null)
 
 const selectColor = (color) => {
-  color === selectedColor.value ? selectedColor.value = null : selectedColor.value = color
+  if(color === selectedColor.value) {
+    selectedColor.value = null
+    selectedCursor.value = null
+    selectedProductId.value = null
+    selectedProductImgUrl.value = null
+  } else {
+    selectedColor.value = color
+  }
 }
 const selectSize = (size) => {
-  size === selectedSize.value ? selectedSize.value = null : selectedSize.value = size
+  if(size === selectedSize.value) {
+    selectedSize.value = null
+    selectedCursor.value = null
+    selectedProductId.value = null
+    selectedProductImgUrl.value = null
+  } else {
+    selectedSize.value = size
+  }
+}
+
+watch(product, () => {
+  setBaseState()
+})
+
+onMounted(() => {
+  if(result.value) {
+    setBaseState()
+  }
+})
+
+const setBaseState = () => {
+  // see if number of variants is 1, if so, set ProductId
+  if(variants.value.length === 1) {
+
+    if(productColors.value.length > 0) selectedColor.value = productColors.value[0]
+    if(productSizes.value.length > 0) selectedSize.value = productSizes.value[0].size
+
+    selectedCursor.value = variants.value[0].cursor
+    selectedProductId.value = variants.value[0].node.id
+    selectedProductImgUrl.value = variants.value[0].node.image.url
+    selectedProductQuantity.value = vendor.value === 'Printify' ? 10:variants.value[0].node.quantityAvailable
+  } else {
+    selectedColor.value = productColors.value[0]
+  }
 }
 
 // Watcher to set the selectedCursor
@@ -227,11 +267,7 @@ watch([selectedSize, selectedColor], ([newSize, newColor]) => {
         selectedProductQuantity.value = vendor.value === 'Printify' ? 10:edge.node.quantityAvailable
       }
     }
-  } else {
-    selectedCursor.value = null
-    selectedProductId.value = null
-    selectedProductImgUrl.value = null
-  }
+  } 
 })
 
 // #endregion
